@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="A personal application tracker for university, job, visa, and scholarship applications."
+  />
+  <title>Application Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="brand-row">
+        <div class="brand-mark">AT</div>
+        <span>Application Tracker</span>
+      </div>
+
+      <p class="eyebrow">Personal application workspace</p>
+      <h1>Keep every application<br />under control.</h1>
+      <p class="hero-copy">
+        Track university, job, scholarship, and visa applications in one simple workspace.
+        Never lose a deadline or forget a required document again.
+      </p>
+
+      <div class="hero-stats">
+        <div>
+          <strong>1 place</strong>
+          <span>for every application</span>
+        </div>
+        <div>
+          <strong>0 missed</strong>
+          <span>important deadlines</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-panel">
+      <div class="form-heading">
+        <p class="eyebrow">New application</p>
+        <h2>Add an application</h2>
+        <p>Save the essentials now. You can update its status later.</p>
+      </div>
+
+      <form id="applicationForm" novalidate>
+        <div class="form-grid">
+          <div class="field field-full">
+            <label for="institution">Institution or company <span>*</span></label>
+            <input
+              id="institution"
+              name="institution"
+              type="text"
+              placeholder="e.g. University College London"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="applicationType">Application type <span>*</span></label>
+            <select id="applicationType" name="application_type" required>
+              <option value="" selected disabled>Select type</option>
+              <option value="University">University</option>
+              <option value="Job">Job</option>
+              <option value="Scholarship">Scholarship</option>
+              <option value="Visa">Visa</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="country">Country <span>*</span></label>
+            <input
+              id="country"
+              name="country"
+              type="text"
+              placeholder="e.g. United Kingdom"
+              required
+            />
+          </div>
+
+          <div class="field field-full">
+            <label for="programRole">Program or role <span>*</span></label>
+            <input
+              id="programRole"
+              name="program_or_role"
+              type="text"
+              placeholder="e.g. MSc Computer Science"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="deadline">Deadline <span>*</span></label>
+            <input id="deadline" name="deadline" type="date" required />
+          </div>
+
+          <div class="field">
+            <label for="status">Current status <span>*</span></label>
+            <select id="status" name="status" required>
+              <option value="Researching">Researching</option>
+              <option value="Preparing documents" selected>Preparing documents</option>
+              <option value="Ready to submit">Ready to submit</option>
+              <option value="Submitted">Submitted</option>
+              <option value="Interview">Interview</option>
+              <option value="Offer received">Offer received</option>
+              <option value="Rejected">Rejected</option>
+            </select>
+          </div>
+
+          <div class="field field-full">
+            <label for="documents">Documents still needed</label>
+            <input
+              id="documents"
+              name="documents_needed"
+              type="text"
+              placeholder="e.g. IELTS result, academic transcript, CV"
+            />
+          </div>
+
+          <div class="field field-full">
+            <label for="applicationUrl">Application link</label>
+            <input
+              id="applicationUrl"
+              name="application_url"
+              type="url"
+              placeholder="https://..."
+            />
+          </div>
+
+          <div class="field field-full">
+            <label for="notes">Notes</label>
+            <textarea
+              id="notes"
+              name="notes"
+              rows="4"
+              placeholder="Add a short note, requirement, or next action..."
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <p class="required-note"><span>*</span> Required fields</p>
+          <button id="submitButton" type="submit">
+            <span>Save application</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+
+        <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
